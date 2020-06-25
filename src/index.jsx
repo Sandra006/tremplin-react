@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { ToastContainer } from 'react-toastify';
+import { BrowserRouter } from 'react-router-dom';
+import * as axiosConfig from './axios';
+
+axiosConfig.create();
 
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <App />
-  </React.StrictMode>,
+    <ToastContainer />
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
