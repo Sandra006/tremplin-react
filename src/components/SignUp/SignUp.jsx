@@ -28,20 +28,21 @@ const SignUp = () => {
   };
 
   const login = () => {
-    history.push('/login')
+    history.push("/login");
   };
 
   const signup = () => {
-    if (!name  || !password || !email || !username) {
-      return toast.error('Veuillez remplir les champs')
+    if (!name || !password || !email || !username) {
+      return toast.error("Veuillez remplir les champs");
     }
-    auth.signup(name, email, username, password)
+    auth
+      .signup(name, email, username, password)
       .then(() => {
-        history.push('/login')
-        toast.success('Compte créé !')
+        history.push("/login");
+        toast.success("Compte créé !");
       })
-      .catch(err => toast.error('Champs mal remplis'));
-    };
+      .catch((err) => toast.error("Champs mal remplis"));
+  };
 
   return (
     <div className="d-flex align-items-center flex-column">

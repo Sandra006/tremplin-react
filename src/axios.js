@@ -5,11 +5,11 @@ export function create() {
     axios.defaults.headers.common.Accept = 'application/json';
 
     axios.interceptors.request.use(async (r) => {
-        const token = localStorage.getItem('token');
-        if (token) {
-          r.headers.authorization = `Bearer ${token}`;
-        }
-        return r;
+      const token = localStorage.getItem('token');
+      if (token) {
+        r.headers.authorization = `Bearer ${token}`;
+      }
+      return r;
     });
     
 }
